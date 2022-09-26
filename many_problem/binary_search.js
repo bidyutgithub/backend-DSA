@@ -61,65 +61,70 @@
 //  let end = arr.length-1;
  
 //  console.log(binarySearch(arr,x,start,end));
-//  =======================================
+//  =============================================================
 //  //binary search algorithm to find the n duplicate number
- 
-//  //find the number of 5 in the array is avalible or not
 
-//     function isDuplicateInArray(nums ,N){
-//         if(N< 0) return false; //if number is not possitive
+
+//another way find duplicate number
+
+// const arr = [1,3,3,34,5,5,7];
+// const target = 34;
+
+// function findDuplicate(arr,target){
+//   let left =0;
+//   let right= arr.length-1;
+  
+//   while(left<right){
+//     let mid=Math.floor((left+right)/2);
     
-        
-//         let start = 0; end =nums.length;
-//         while(start <=end){
-//           let mid = parseInt(start +(end-start)/2);
-//           if(N==nums[mid]){
-//             if(mid> 0 && nums[mid-1] == N || mid<nums.length-1 && nums[mid+1]==N)
-//               return true;
-//           }
-//           else if(N < nums[mid]) //value chacking
-//             end = mid -1;   //index cheacking
-//           else
-//             start = mid+1; //index checking
-//         }
+//     if(arr[mid]===target){
+//       if(arr[mid]===arr[mid-1] || arr[mid]===arr[mid+1]){
+//         return true;
+//       }else{
 //         return false;
 //       }
-//       let arr= [1,3,5,5,9];
-//       console.log(isDuplicateInArray(arr,5));
-//                 //output-true
-//=============================================================
-//simple binary search
+//     }
+//     else if(arr[mid]<target){
+//       left = mid+1;
+//     }else{
+//       right=mid-1;
+//     }
+//   }
+// }
+//  console.log(findDuplicate(arr,target))
+// //=============================================================
+// //simple binary search
 
-//linear  search recursive approch
+// //linear  search recursive approch
 
-const arr=[1,2,7,5,13,15,16,21,24,28,30];
-//index    0 1 2 3 4   5  6  7  8  9  10  
-const target = 28;
+// const arr=[1,2,7,5,13,15,16,21,24,28,30];
+// //index    0 1 2 3 4   5  6  7  8  9  10  
+// const target = 28;
 
 
-//binary search
-function binarySearch(arr,target){
-  let left = 0; 
-  let right = arr.length-1; 
+// //binary search
+// function binarySearch(arr,target){
+//   let left = 0; 
+//   let right = arr.length-1; 
   
-  while(left<=right){
-    let mid =  Math.floor ((left+right)/2)
-    //let mid =  Math.floor ((right-left)/2)
+//   while(left<=right){
+//     let mid =  Math.floor ((left+right)/2)
+//     //let mid =  Math.floor ((right-left)/2)
     
-    if(arr[mid]===target){
-      return mid
-    }else if(arr[mid]<target){
-      left = mid+1;
-    }else{
-      right = mid-1;
-    }
+//     if(arr[mid]===target){
+//       return mid
+//     }else if(arr[mid]<target){
+//       left = mid+1;
+//     }else{
+//       right = mid-1;
+//     }
     
-  }
-  return -1;
+//   }
+//   return -1;
   
-}
-console.log(binarySearch(arr,target));
-//output-9
+// }
+// console.log(binarySearch(arr,target));
+      //output-9
 
 
  
